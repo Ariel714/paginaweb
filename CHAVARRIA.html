@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAVARRIA</title>
+</head> 
+<style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('descarga.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            line-height: 1.6;
+        }
+             /* Animación del título */
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                text-shadow: 
+                    0 0 5px #fff,
+                    0 0 10px #fff,
+                    0 0 20px #ff00de,
+                    0 0 40px #ff00de;
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+     h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px #ff00de,
+                0 0 40px #ff00de;
+            animation: flicker 1.5s infinite alternate;
+            border: 2px solid #3498db;
+            box-shadow: 0 0 15px #2980b9;
+            padding: 15px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 90%;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }.section {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 95%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .section-title {
+            color: #ffcc00;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        /* Formulario */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        form p {
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        input[type="submit"] {
+            background-color: #ff00de;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+        
+        /* Tablas */
+        table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #444;
+        }
+        
+        th {
+            background-color: #2980b9;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Imágenes */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        img:hover {
+            transform: scale(1.03);
+        }
+        
+        /* Precios */
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .price-la-paz {
+            background-color: rgba(219, 52, 77, 0.3);
+            border: 2px solid #db344d;
+            box-shadow: 0 0 10px #b93729;
+        }
+        
+        .price-oruro {
+            background-color: rgba(16, 11, 2, 0.3);
+            border: 2px solid #100b02;
+            box-shadow: 0 0 10px #b93729;
+        }
+        
+        /* Horarios */
+        .schedule {
+            margin: 20px 0;
+        }
+        
+        .schedule ol {
+            list-style-type: none;
+        }
+        
+        .schedule li {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .social-icons {
+            margin-bottom: 15px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: #ff00de;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Efectos especiales */
+        details {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            font-size: 1.2rem;
+            color: #ffcc00;
+            font-style: italic;
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-left: 5px solid #ff00de;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            background-color: rgba(0, 0, 0, 0.9);
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #ff00de;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+            animation: modalFadeIn 0.5s;
+        }
+
+        @keyframes modalFadeIn {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #ff00de;
+        }
+
+        /* Botón de WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+        }
+
+        /* Contador de visitas */
+        .visitor-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+</style>
+<body background="descarga.jpeg"> 
+ 
+    <center> <h1 style=" border: 2px solid #3498db; box-shadow: 0 0 10px #2980b9; padding: 10px; text-align: center;" ><font face="bold" color="blackyellow"><u>EMPRESA DE TRANSPORTE DE BUSES "CHAVARRIA"</u></font></h1></center>
+  
+    <!-- Botón de WhatsApp -->
+    <div class="whatsapp-btn" onclick="openWhatsApp()">
+        <span>📱</span>
+    </div>
+
+    <!-- Contador de visitas -->
+    <div class="visitor-counter" id="visitorCounter">
+        Visitas: Cargando...
+    </div>
+
+    <!-- Modal de promoción -->
+    <div id="promoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="color: #ff00de; text-align: center;">¡OFERTA ESPECIAL!</h2>
+            <p style="text-align: center; margin: 20px 0;">Este mes tenemos descuentos especiales en viajes a Oruro. ¡Reserva ahora y obtén un 10% de descuento!</p>
+            <img src="chavarria.png" style="max-width: 100%; border-radius: 8px; margin: 10px auto;">
+            <button onclick="closeModalAndScroll()" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #ff00de; color: white; border: none; border-radius: 5px; cursor: pointer;">Quiero reservar</button>
+        </div>
+    </div>
+        
+    </table>
+    <center><img src="chavarria.png" width="1500" id="mainImage">
+
+  <h3 style="border: 2px solid #dba134; box-shadow: 0 0 10px #29b976; padding: 10px; text-align: center;"> <font face="new time roman" size="+2" color="blackyellow"> <u>RESERVA TU VIAJE AQUI</u></font></h3>
+  <form id="reservationForm">
+                <p>NOMBRE: <input type="text" name="nombre" id="nombre" required></p>
+                <p>EMAIL: <input type="email" name="email" id="email" required></p>
+                <p>TELEFONO: <input type="tel" name="telefono" id="telefono" required></p>
+                <p>DESTINO: 
+                    <select name="destino" id="destino" style="width: 100%; padding: 10px; border-radius: 5px;">
+                        <option value="La Paz">La Paz</option>
+                        <option value="Oruro">Oruro</option>
+                        <option value="Cochabamba">Cochabamba</option>
+                    </select>
+                </p>
+                <p><input type="submit" value="RESERVAR"></p>
+            </form>
+            <br>
+</body>       
+<p><font face="time new roman" size="+2" color="red"> <b><i>VEN CON NOSOTROS SOMOS LA MEJOR EMPRESA DE TRANSPORTE DE LLALLAGUA</i></b></font></p>
+<br>
+<center><p><font face="aria-hidden" size="+2" >OFICINA PRINCIPAL</font></p></center>
+         <center><img src="oficina.jpg " width="400" style="border: 3px solid black"; class="zoomable"> </center>
+ <center><table border="blackblue"> <tr>
+   <td><b><i>TERMINAL LLALLAGUA</i></b></td>
+   <td><b><i>TELF:7382922</i></b></td>
+   <td><b><i>Scra: JHOSELIN MAMANI QUISPE</i></b></td>
+   <td><img src="emp3.jpeg" width="200" class="zoomable"> </td>
+</tr></table></center>
+
+<h2> <button type="button" class="close" onclick="closeModal(event)">
+    <span aria-hidden="true">x</span> </button></h2>
+    
+    <h3 style="border: 2px solid #dba134; box-shadow: 0 0 10px #29b976; padding: 10px; text-align: center;"> <font face="calibri" size="+2" > <u>OPCIONES PARA ELIGIR</u></font></h3>
+<table>  <tr> <td><img src="bus1.jpeg"  width="420"  style="border: 3px solid black"; class="zoomable"></td><br>
+
+<td><img src="bus2.jpeg" width="500"  style="border: 3px solid black"; class="zoomable"></td></tr><br>
+<tr> <td><b><i><font size="+2" style="border: 2px solid #db344d; box-shadow: 0 0 10px #b93729; padding: 10px; text-align: center;">LA PAZ 60bs</font></i></b></td>
+<td><b><i><font size="+2" style="border: 2px solid #100b02; box-shadow: 0 0 10px #b93729; padding: 10px; text-align: center;">ORURO 20bs</font></i></b></td></tr>
+<br>
+<hr>
+
+<div><tr><td><b><font color="purple" size="+2"><center>SALIDAS lunes a viernes</center></font></b></td>
+<td><b><font color="purple" size="+2"><center>SALIDAS lunes a viernes</center></font></b></td></tr></div>
+
+<tr><td>
+    <ol type="A">
+<li><center>17:00 pm</center></li>
+<li><center>21:00 pm</center></li>
+<li><center>12:00 pm</center></li>  
+<li><center> <details>
+<summary>OTRO DIA </summary>
+<P>DOMINGO 7:00 AM</P>
+<P>SABADO 8:00 AM</P>
+</details></center></li>  
+</ol>
+</td>
+
+<td><ol type="A">
+<li><center>15:00 pm</center> </li>
+<li><center>22:00 pm</center></li>
+<li><center>7:00 am</center></li>  
+<li><center> <details>
+<summary>OTRO DIA </summary>
+<P>DOMINGO 4:00 AM</P>
+<P>SABADO 6:00 AM</P>
+</details></center></li>  
+</ol></td></tr>
+
+</table></center>
+
+
+ <center> <table border="4" bgcolor="blue" id="servicesTable">
+        <tr> <td><font face="arial"><b>VIAJES</b></font></td>
+        <td><font face="arial"><center><b>SERVICIOS</b></center></font></td>
+        <td><font face="arial"><b>ATENCION AL CLIENTE</b></font></td>
+        <td><font face="arial"><b>FOTOS</b></font></td>
+        <td><font face="arial"><b>TELEFONO</b></font></td>
+        <tr> <td>oruro</td>
+        <td>oficina terminal ORURO</td>
+        <td> lic.Sonia Lopez c.74332323</td>
+        <td><img src="emp1.jpeg" width="150" class="zoomable"></td>
+        <td>75423312</td>
+       </tr>
+        <tr> <td>La Paz</td>
+            <td>oficina terminal LA PAZ</td>
+            <td> sra. Noevemi Perez c.6232811</td>
+            <td><img src="emp2.jpeg" width="130" class="zoomable"></td>
+            <td>67435656</td>
+        </tr>
+</tr>
+
+<footer>
+    <div class="social-icons">
+                <a href="#" onclick="openSocial('facebook')">📱</a>
+                <a href="#" onclick="openSocial('instagram')">💻</a>
+                <a href="#" onclick="openSocial('email')">📧</a>
+                <a href="#" onclick="openSocial('website')">🔗</a>
+    </div>
+ 
+    
+        <p>Transportes CHAVARRIA &copy; <span id="currentYear"></span> - Todos los derechos reservados</p>
+    </footer>
+
+<script>
+    // Funciones JavaScript para mejorar la interactividad
+    
+    // Mostrar año actual en el footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Contador de visitas (simulado)
+    let visitCount = localStorage.getItem('visitCount') || 0;
+    visitCount++;
+    localStorage.setItem('visitCount', visitCount);
+    document.getElementById('visitorCounter').textContent = `Visitas: ${visitCount}`;
+    
+    // Modal de promoción
+    window.onload = function() {
+        setTimeout(() => {
+            document.getElementById('promoModal').style.display = 'block';
+        }, 3000);
+    };
+    
+    function closeModal() {
+        document.getElementById('promoModal').style.display = 'none';
+    }
+    
+    function closeModalAndScroll() {
+        closeModal();
+        document.getElementById('reservationForm').scrollIntoView({behavior: 'smooth'});
+    }
+    
+    // WhatsApp
+    function openWhatsApp() {
+        const phoneNumber = '5917382922';
+        const message = 'Hola, estoy interesado en los servicios de Transporte Chavarria.';
+        window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+    
+    // Formulario de reserva
+    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const nombre = document.getElementById('nombre').value;
+        const destino = document.getElementById('destino').value;
+        
+        alert(`¡Gracias ${nombre}! Tu reserva a ${destino} ha sido recibida. Nos contactaremos contigo pronto.`);
+        this.reset();
+    });
+    
+    // Efecto zoom en imágenes
+    const zoomableImages = document.querySelectorAll('.zoomable');
+    zoomableImages.forEach(img => {
+        img.addEventListener('click', function() {
+            this.style.transform = this.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+    });
+    
+    // Redes sociales
+    function openSocial(network) {
+        let url;
+        switch(network) {
+            case 'facebook':
+                url = 'https://facebook.com/TransporteChavarria';
+                break;
+            case 'instagram':
+                url = 'https://instagram.com/TransporteChavarria';
+                break;
+            case 'email':
+                url = 'mailto:contacto@transporte-chavarria.com';
+                break;
+            case 'website':
+                url = 'https://transporte-chavarria.com';
+                break;
+        }
+        window.open(url, '_blank');
+    }
+    
+    // Cambiar imagen principal aleatoriamente
+    const mainImages = ['chavarria.png', 'bus1.jpeg', 'bus2.jpeg'];
+    setInterval(() => {
+        const randomImage = mainImages[Math.floor(Math.random() * mainImages.length)];
+        document.getElementById('mainImage').src = randomImage;
+    }, 5000);
+    
+    // Resaltar fila de tabla al pasar el mouse
+    const tableRows = document.querySelectorAll('#servicesTable tr');
+    tableRows.forEach(row => {
+        row.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = 'rgba(255, 0, 222, 0.2)';
+        });
+        row.addEventListener('mouseleave', function() {
+            this.style.backgroundColor = '';
+        });
+    });
+</script>
+    
+</body>
+</html>
